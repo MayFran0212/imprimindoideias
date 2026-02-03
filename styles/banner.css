@@ -161,6 +161,9 @@
     left: 35%;
     top: 35%;
 }
+.about {
+        top: 70%;
+    }
 }
 
 /* Telas Médias (Notebooks da colega) */
@@ -184,6 +187,10 @@
 
     .banner__text-content--product {
         padding: 2.5rem 11rem 2.5rem 1.5rem;
+    }
+
+    .about {
+        top: 40%;
     }
 
     .banner__description {
