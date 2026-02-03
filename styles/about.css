@@ -1,0 +1,229 @@
+/* about.css - Versão Corrigida e Alinhada */
+
+/* Configurações Gerais */
+#about__history,
+#about__dna,
+#about__techniques,
+#about__cta {
+    padding: clamp(40px, 8vw, 80px) 0;
+}
+
+.about__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.cursive {
+    font-family: var(--font-wild);
+    text-transform: none;
+    font-size: 1.4em;
+    color: var(--rosa);
+}
+
+.subtitle {
+    color: var(--amarelo);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* 1. História e Trajetória */
+#about__history .about__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(30px, 5vw, 60px);
+}
+
+.history__content {
+    flex: 1;
+}
+
+.section__title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    margin-bottom: 20px;
+    color: var(--cinza-escuro);
+    font-family: var(--font-futura-bold);
+    text-transform: uppercase;
+}
+
+.section__paragraph {
+    color: var(--cinza-escuro);
+    line-height: 1.7;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.ceo__quote {
+    font-style: italic;
+    color: var(--rosa);
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    margin-top: 30px;
+    border-left: 4px solid var(--amarelo);
+    padding-left: 20px;
+}
+
+/* 2. Seção DNA (Missão, Visão e Valores) */
+/* CORREÇÃO: Usando largura calculada e margem auto para centralizar o bloco */
+#about__dna {
+    background-color: var(--cinza-clarissimo);
+    border-radius: 40px;
+    width: calc(100% - 40px); /* Garante que as margens caibam na tela */
+    margin: 40px auto; 
+    padding: 60px 0;
+}
+
+.dna__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 0 5%;
+}
+
+.dna__item h3 {
+    border-bottom: 2px solid var(--amarelo);
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    color: var(--rosa);
+    text-transform: uppercase;
+}
+
+.values__list {
+    list-style: none;
+    padding: 0;
+}
+
+.values__list li::before {
+    content: "✦";
+    color: var(--amarelo);
+    margin-right: 10px;
+}
+
+/* 3. Técnicas de Gravação */
+.center__text {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.techniques__intro {
+    max-width: 800px;
+    margin: 20px auto 0;
+    line-height: 1.8;
+}
+
+.techniques__grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.tech__card {
+    background: var(--branco);
+    padding: 40px 20px;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.4s ease;
+    border: 1px solid var(--cinza-clarissimo);
+}
+
+.tech__card i {
+    font-size: 2.5rem;
+    color: var(--amarelo);
+    margin-bottom: 20px;
+}
+
+.tech__card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(176, 124, 131, 0.1);
+    border-color: var(--rosa);
+}
+
+/* 4. CTA Catálogo */
+/* CORREÇÃO: Alinhamento centralizado e largura controlada */
+#about__cta {
+    background-color: var(--rosa);
+    border-radius: 30px;
+    width: calc(100% - 40px);
+    margin: 60px auto;
+    overflow: hidden;
+}
+
+.cta__glass {
+    padding: 60px 5%;
+    color: var(--branco);
+    text-align: center;
+}
+
+.cta__form {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.cta__form input {
+    padding: 15px 25px;
+    border-radius: 50px;
+    border: none;
+    width: 100%;
+    max-width: 350px;
+}
+
+/* 5. Responsividade e Correção do Banner Mobile */
+
+/* Override para o Banner no Mobile ficar sobre a foto */
+@media (max-width: 991px) {
+    .banner__text-content--about {
+        position: absolute;
+        top: 12%;
+        left: 5%;
+        transform: none;
+        padding: 2.5rem 5.5rem 2.5rem 1.5rem;
+        text-align: left;
+        max-width: 100%;
+    }
+
+    .banner__description {
+        margin-top: 10px;
+    }
+
+    #about__history .about__container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .dna__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .techniques__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .techniques__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta__form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta__form input {
+        max-width: 100%;
+    }
+}
+
+/* Ajuste para telas muito grandes (Ultrawide) */
+@media (min-width: 1800px) {
+    .about__container {
+        max-width: 140;
+    }
+}

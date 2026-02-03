@@ -1,0 +1,166 @@
+/* contact.css - Versão Profissional e Fluida */
+
+/* 1. Configurações da Seção */
+#contact__section {
+    /* Padding fluido para que o respiro se adapte à altura da tela */
+    padding: clamp(60px, 10vw, 100px) 0;
+    background-color: var(--branco);
+}
+
+.contact__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    display: grid;
+    /* Divide em duas colunas no desktop: info na esquerda e mapa na direita */
+    grid-template-columns: 1fr 1.2fr; 
+    gap: clamp(40px, 6vw, 80px);
+    align-items: start;
+}
+
+/* 2. Tipografia e Títulos */
+.cursive {
+    font-family: var(--font-wild);
+    color: var(--rosa);
+    text-transform: none;
+    font-size: 1.3em;
+}
+
+.subtitle {
+    color: var(--amarelo);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.section__title {
+    margin-bottom: clamp(20px, 4vw, 40px);
+    color: var(--cinza-escuro);
+    font-size: clamp(1.8rem, 4vw, 2.8rem); /* Texto não "estoura" em notebooks */
+    font-family: var(--font-futura-bold);
+    text-transform: uppercase;
+}
+
+/* 3. Grid de Informações de Contato */
+.info__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.info__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+/* Efeito sutil de hover nos itens de informação */
+.info__item:hover {
+    background-color: var(--cinza-clarissimo);
+    transform: translateX(5px);
+}
+
+.info__item i {
+    font-size: 1.5rem;
+    color: var(--amarelo);
+    margin-top: 5px;
+}
+
+.info__item h4 {
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    color: var(--rosa);
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    font-family: var(--font-futura-bold);
+}
+
+.info__item p {
+    color: var(--cinza-escuro);
+}
+
+.contact-link {
+    color: var(--cinza-escuro);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: var(--rosa);
+}
+
+/* 4. Mapa com Design Premium */
+.contact__map {
+    border-radius: 30px;
+    overflow: hidden; 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--cinza-clarissimo);
+    line-height: 0; /* Remove espaço extra embaixo do iframe */
+}
+
+.contact__map iframe {
+    width: 100%;
+    filter: grayscale(0.2); /* Mapa mais elegante e sóbrio */
+    transition: filter 0.5s ease;
+}
+
+.contact__map:hover iframe {
+    filter: grayscale(0); /* Volta as cores ao passar o mouse */
+}
+
+/* 5. Responsividade */
+
+/* Tablets e notebooks pequenos */
+@media (max-width: 991px) {
+    .contact__container {
+        grid-template-columns: 1fr; /* Uma coluna só no mobile */
+        gap: 50px;
+    }
+
+    .contact__info {
+        text-align: center;
+    }
+
+    .info__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+    }
+
+    .info__item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        border: 1px solid var(--cinza-clarissimo);
+        padding: 30px 20px;
+    }
+
+    .info__item:hover {
+        transform: translateY(-5px);
+    }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+    .info__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact__map {
+        height: 300px;
+    }
+}
+
+/* Ajuste para Ultrawide */
+@media (min-width: 1800px) {
+    .contact__container {
+        max-width: 1400px; /* Expande um pouco para não sobrar muito espaço branco */
+    }
+}

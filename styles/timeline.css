@@ -1,0 +1,114 @@
+/* Container da linha do tempo */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* A linha vertical usando pseudo-elemento */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-top: -40px;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 80%;
+    background-color: var(--cinza-claro); /* Cor da linha */
+    z-index: -1;
+}
+
+/* Itens da linha do tempo */
+.timeline-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+/* Ponto na linha do tempo */
+.timeline-dot {
+    width: 20px;
+    margin-bottom: -10px;
+    height: 20px;
+    background-color: var(--amarelo); /* Cor do ponto */
+    /* border: 2px solid #333;  Borda do ponto */
+    border-radius: 50%;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+/* Conteúdo do item */
+.timeline-content {
+    text-align: center;
+    background-color: var(--branco);
+    border: 2px solid var(--rosa);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 8px 8px 0px var(--rosa);
+    cursor: default;
+}
+
+/* Título do item */
+.timeline-title {
+    color: var(--rosa);
+    margin-top: 0;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+.timeline-title:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    color: var(--cinza-escuro);
+}
+
+.timeline-content li {
+    color: var(--cinza-escuro);
+}
+
+/* Estilo para alinhar os itens alternadamente (opcional, mas fica bem legal!)
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+} */
+
+.timeline-cards {
+    margin-top: -30px;
+    display: flex;
+    text-align: center;
+    align-items:flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    background-color: var(--cinza-claro);
+    border-radius: 20px;
+    padding: 50px 0 25px 0;
+    z-index: -1;
+}
+
+.timeline-card {
+    color: var(--cinza-escuro);
+    padding: 15px;
+    width: 300px;
+    border-radius: 15px;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-left: 0;
+    margin-right: 35px;
+}
+
+.timeline-item:first-child .timeline-content {
+    margin-left: 35px;
+}
+
+.timeline-content:hover {
+    background-color: var(--branco);
+    border: 2px solid var(--amarelo);
+    box-shadow: 8px 8px 0px var(--amarelo);
+}
+

@@ -1,0 +1,199 @@
+/* styles/banner.css - Versão Final e Refatorada */
+
+/* 1. Estrutura Base do Banner */
+#container__banner {
+    position: relative;
+    width: 100%;
+    min-height: 20vh;
+    overflow: hidden;
+    background-color: var(--branco);
+}
+
+.banner__content-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.banner__link {
+    display: block;
+    width: 100%;
+    position: relative;
+    text-decoration: none;
+}
+
+.banner__img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 2. Container de Texto (O segredo da responsividade) */
+.banner__text-content {
+    position: absolute;
+    top: 50%;
+    left: 9%; /* Mantém o texto afastado da borda */
+    transform: translateY(-50%); /* Centraliza verticalmente com perfeição */
+    z-index: 10;
+    width: 100%;
+    max-width: 600px; /* Impede que o texto estique demais em telas Ultrawide */
+    pointer-events: none; /* Garante que o clique funcione no link do fundo */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* 3. Tipografia Fluida (Se ajusta ao tamanho da tela) */
+.banner__eyebrow {
+    display: block;
+    text-transform: uppercase;
+    color: var(--amarelo);
+    font-size: clamp(0.7rem, 1.2vw, 0.85rem);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+}
+
+.banner__title {
+    text-transform: uppercase;
+    font-family: var(--font-futura-bold);
+    color: var(--rosa);
+    line-height: 1.1;
+    /* clamp(min, ideal, max) - controla o tamanho para não "estourar" em notebooks */
+    font-size: clamp(1.8rem, 4.5vw, 3.2rem); 
+}
+
+.banner__description {
+    color: var(--cinza-escuro);
+    line-height: 1.4;
+    margin-top: 1.5rem 0 2rem 0;
+    font-size: clamp(0.9rem, 1.1vw, 1.1rem);
+    /* max-width: 500px; */
+}
+
+/* Estilização do Botão no Banner */
+.banner__cta {
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+/* Variação Centralizada (Produtos) */
+/* .banner__text-content--product {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    align-items: center;
+    max-width: 700px;
+} */
+
+/* 4. Variações de Estilo */
+
+.banner__text-content--product .banner__description {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilo para Banner da página Sobre (ajuste de posição se necessário) */
+.banner__text-content--about {
+    left: 8%;
+}
+
+.banner__title.about-small {
+    font-size: clamp(1.1rem, 2vw, 2rem);
+    line-height: 1.1;
+}
+
+/* 5. Swiper Hero (Navegação e Paginação) */
+.swiper-hero {
+    width: 100%;
+    height: auto;
+}
+
+/* Setas de Navegação (Círculos Brancos) */
+.swiper-hero .swiper-button-next,
+.swiper-hero .swiper-button-prev {
+    background-color: var(--branco);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.swiper-hero .swiper-button-next:after,
+.swiper-hero .swiper-button-prev:after {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--amarelo);
+}
+
+/* Efeito Hover nas Setas */
+.swiper-hero .swiper-button-next:hover,
+.swiper-hero .swiper-button-prev:hover {
+    background-color: var(--amarelo);
+    transform: scale(1.1);
+}
+
+.swiper-hero .swiper-button-next:hover:after,
+.swiper-hero .swiper-button-prev:hover:after {
+    color: var(--branco);
+}
+
+/* Bolinhas de Paginação */
+.swiper-hero .swiper-pagination-bullet-active {
+    background: var(--rosa) !important;
+}
+
+/* 6. Media Queries (Ajustes Finais) */
+
+/* Telas Ultrawide (Acima de 1800px), vou alterar para 995 */
+@media (min-width: 955px) {
+    .banner__text-content {
+        left: 12%; /* Traz o texto um pouco mais para dentro */
+    }
+    .banner__text-content--product {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    left: 35%;
+    top: 35%;
+}
+}
+
+/* Telas Médias (Notebooks da colega) */
+@media (max-width: 1366px) {
+    .banner__text-content {
+        max-width: 450px;
+    }
+}
+
+/* Mobile (Abaixo de 991px) */
+@media (max-width: 991px) {
+    .banner__text-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: none;
+        padding: 2.5rem 5.5rem 2.5rem 1.5rem;
+        text-align: left;
+        max-width: 100%;
+    }
+
+    .banner__text-content--product {
+        padding: 2.5rem 11rem 2.5rem 1.5rem;
+    }
+
+    .banner__description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Esconde setas no mobile para limpar o visual */
+    .swiper-hero .swiper-button-next,
+    .swiper-hero .swiper-button-prev {
+        display: none;
+    }
+}

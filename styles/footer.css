@@ -1,0 +1,154 @@
+footer {
+    background-color: var(--cinza-escuro);
+    padding: 60px 20px 30px 20px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    text-align: center;
+    color: var(--branco);
+    text-transform: uppercase;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--branco);
+}
+
+a:hover {
+    color: var(--amarelo);
+}
+
+/* .footer__titles {
+    margin: 65px 0 8px 0;
+} */
+
+footer h3 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+footer p {
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+#footer__logo{
+    width: 150px;
+}
+
+#footer__payment__list{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 200px;
+    margin: 0 auto;
+}
+
+#footer__payment__list img {
+    width: 50px;
+}
+
+#footer__socialmedia__list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#footer__socialmedia__list img {
+    width: 38px;
+}
+
+#footer__button--top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 65px;
+}
+
+#footer__privacy li, #footer__privacy a{
+    margin-bottom: 25px;
+    color: var(--cinza-claro);
+}
+
+.footer__titles {
+    font-size: 16px;
+    margin: 30px 0 10px 0; /* Ajustei um pouco o respiro */
+}
+
+/* --- VERSÃO DESKTOP (A partir de 992px) --- */
+@media (min-width: 992px) {
+    footer {
+        text-align: left; /* No desk, o alinhamento à esquerda é mais elegante */
+        padding: 80px 10%;
+    }
+
+    .container__footer--colunms {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 50px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .container__footer--colunm {
+        flex: 1; /* Faz as colunas dividirem o espaço igualmente */
+    }
+
+    /* Ajuste específico para o logo não ficar gigante */
+    #footer__logo {
+        width: 180px;
+    }
+
+    /* Alinhando as listas à esquerda no desk */
+    #footer__payment__list, 
+    #footer__socialmedia__list {
+        justify-content: flex-start;
+        margin: 0;
+    }
+
+    .footer__titles {
+        margin-top: 20px; /* Remove o excesso de margem no topo que usamos no mobile */
+        margin-bottom: 20px;
+    }
+
+    /* Botão Voltar ao Topo no Desk */
+    #footer__button--top {
+        justify-content: flex-start; /* Joga para o canto direito da coluna */
+        margin: 40px 0 0 0;
+    }
+
+    /* Linha de Privacidade e Copyright */
+    .container__footer--line {
+        margin-top: 50px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 30px;
+    }
+
+    #footer__privacy {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+    }
+
+    #footer__privacy li {
+        margin-bottom: 0; /* Remove a margem empilhada do mobile */
+    }
+
+    #footer__privacy p {
+        font-size: 0.7rem;
+        opacity: 0.7;
+    }
+
+    #footer__privacy li, #footer__privacy a:hover {
+        color: var(--branco);
+    }
+}

@@ -1,0 +1,135 @@
+#container__clientes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--rosa);
+    margin-top: -4px;
+    padding-bottom: 45px;
+}
+
+#container__clientes--titulo {
+    background-color: var(--amarelo);
+    color: var(--branco);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 5px 10px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.container__clientes--carousel {
+    width: 80%; /* Ajuste a largura conforme sua necessidade */
+    max-width: 350px; /* Largura máxima para mobile */
+    overflow: hidden; /* Esconde os logos que estão fora da área visível */
+    background-color: var(--rosa);
+    padding: 20px;
+    white-space: nowrap;
+    /* border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  }
+  
+  .container__clientes--track {
+    display: flex; /* Coloca os logos lado a lado */
+    align-items: center;
+    animation: 35s scrollLogos infinite linear; /* Animação principal */
+    /* Duplicamos os logos para uma transição suave */
+    width: fit-content; /* A largura será ajustada pelo JS, mas 'fit-content' garante que os itens se ajustem */
+  }
+  
+  .container__clientes--track img {
+    margin: 0 15px; /* Espaçamento entre os logos */
+    filter: grayscale(100%); /* Deixa os logos em escala de cinza */
+    opacity: 0.7; /* Diminui a opacidade */
+    transition: all 0.3s ease; /* Transição suave para hover */
+    /* height: 50px; */
+    width: 10%;
+  }
+  
+  .container__clientes--track img:hover {
+    filter: grayscale(0%); /* Remove o filtro de escala de cinza no hover */
+    opacity: 1; /* Aumenta a opacidade no hover */
+    transform: scale(1.05); /* Pequeno zoom no hover */
+  }
+  
+  /* Animação Keyframes */
+  @keyframes scrollLogos {
+    from {
+      transform: translateX(0); /* Começa na posição original */
+    }
+    to {
+      transform: translateX(-100%); /* Move metade do "trilho" para a esquerda */
+    }
+  }
+
+@media (min-width: 768px) {
+    #logo__apoio {
+        width: 156px;
+        height: 52px;
+    }
+    
+    #logo__atlas {
+        width: 131px;
+        height: 59px;
+    }
+    
+    #logo__bunge {
+        width: 185px;
+        height: 42px;
+    }
+    
+    #logo__cruzeiro {
+        width: 225px;
+        height: 53px;
+    }
+    
+    #logo__mastercard {
+        width: 215px;
+        height: 48px;
+    }
+    
+    #logo__natura {
+        width: 100px;
+        height: 76px;
+    }
+    
+    #logo__niterra {
+        width: 150px;
+        height: 52px;
+    }
+    
+    #logo__picpay {
+        width: 150px;
+        height: 48px;
+    }
+    
+    #logo__qiagen {
+        width: 73px;
+        width: 60px;
+    }
+    
+    #logo__santander {
+        width: 224px;
+        height: 39px;
+    }
+    
+    #logo__shein {
+        width: 154px;
+        height: 33px;
+    }
+    
+    #logo__suzano {
+        width: 216px;
+        height: 50px;
+    }
+    
+    #logo__tiktok {
+        width: 164px;
+        height: 38px;
+    }
+    
+    #logo__yamaha {
+        width: 181px;
+        height: 61px;
+    }
+}

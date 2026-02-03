@@ -1,0 +1,120 @@
+#container__instagram {
+    padding: 80px 0;
+    background-color: var(--branco);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#container__instagram--titulo {
+    text-align: center;
+    color: var(--cinza-escuro);
+    margin-bottom: 40px;
+    font-size: 1.5rem;
+}
+
+/* HEADER ESTILO INSTAGRAM */
+.insta-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px 30px;
+}
+
+.insta-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #dbdbdb;
+    padding: 2px;
+}
+
+.profile-info h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--cinza-escuro);
+    margin-bottom: 2px;
+}
+
+.profile-info p {
+    font-size: 0.9rem;
+    color: #8e8e8e;
+}
+
+.insta-follow-btn {
+    background-color: var(--amarelo);
+    color: var(--branco);
+    padding: 7px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.insta-follow-btn:hover { 
+    background-color: var(--amarelo-hover);
+    color: var(--branco);
+}
+
+/* GRADE DE POSTS - PROPORÇÃO 1080x1350 */
+.instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.insta-item {
+    position: relative;
+    /* Proporção 1080x1350 = 4:5. Calculamos a altura baseado na largura */
+    aspect-ratio: 4 / 5; 
+    overflow: hidden;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}
+
+.insta-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.insta-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: var(--branco);
+    font-size: 1.5rem;
+}
+
+.insta-item:hover img { transform: scale(1.05); }
+.insta-item:hover .insta-overlay { opacity: 1; }
+
+.insta-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .instagram-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas no mobile */
+        gap: 10px;
+    }
+    .insta-header { flex-direction: column; gap: 20px; text-align: center; }
+    .insta-profile { flex-direction: column; }
+}

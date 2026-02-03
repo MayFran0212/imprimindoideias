@@ -1,0 +1,78 @@
+#quote__form {
+    padding: 80px 0;
+    background-color: var(--branco);
+}
+
+.cursive {
+    font-family: var(--font-wild);
+    color: var(--rosa);
+    text-transform: none;
+    font-size: 1.3em;
+}
+
+.quote__container {
+    max-width: 800px; /* Formulários muito largos são cansativos de ler */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.quote__header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.form__container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Organização em duas colunas no desktop */
+.input__group {
+    display: flex;
+    gap: 20px;
+}
+
+.input__group input, 
+.input__group select {
+    flex: 1;
+}
+
+/* Estilo dos campos */
+input, select, textarea {
+    padding: 18px 25px;
+    border: 1px solid var(--cinza-clarissimo);
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: #fdfdfd;
+    transition: all 0.3s ease;
+    color: var(--cinza-escuro);
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--rosa);
+    box-shadow: 0 0 10px rgba(212, 59, 114, 0.1);
+    background-color: var(--branco);
+}
+
+textarea {
+    resize: none; /* Impede o usuário de bagunçar o layout puxando o canto */
+}
+
+/* Botão Centralizado */
+.form__container .cta__button {
+    align-self: center;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 20px;
+}
+
+/* Ajuste Mobile */
+@media (max-width: 768px) {
+    .input__group {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

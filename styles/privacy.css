@@ -1,0 +1,102 @@
+/* MOBILE FIRST */
+.privacy-container {
+    padding: 120px 20px 60px; /* Espaço para o menu fixo */
+    background-color: #f9f9f9;
+    min-height: 80vh;
+}
+
+.privacy-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--branco);
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.privacy-content h1 {
+    font-family: var(--font-wild);
+    color: var(--rosa);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.last-update {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #999;
+    margin-bottom: 40px;
+}
+
+.privacy-text h2 {
+    color: var(--cinza-escuro);
+    font-size: 1.3rem;
+    margin: 30px 0 15px;
+    border-left: 4px solid var(--rosa);
+    padding-left: 15px;
+}
+
+.privacy-text p, .privacy-text li {
+    color: #555;
+    line-height: 1.8;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.privacy-text ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.privacy-contact {
+    margin-top: 50px;
+    padding: 25px;
+    background-color: rgba(220, 144, 149, 0.1); /* Rosa clarinho */
+    border-radius: 15px;
+    text-align: center;
+}
+
+.privacy-contact h3 {
+    color: var(--rosa);
+    margin-bottom: 10px;
+}
+
+.privacy-contact p {
+    color: var(--cinza-escuro);
+}
+
+/* Listas customizadas */
+.privacy-list {
+    list-style: none;
+    padding-left: 10px;
+    margin: 20px 0;
+}
+
+.privacy-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 15px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.privacy-list li::before {
+    content: "✦";
+    position: absolute;
+    left: 0;
+    color: var(--amarelo);
+}
+
+/* DESKTOP ADJUSTMENTS */
+@media (min-width: 992px) {
+    .privacy-container {
+        padding: 150px 0 100px;
+    }
+    .privacy-content {
+        padding: 60px;
+    }
+    .privacy-content h1 {
+        font-size: 3.5rem;
+    }
+}

@@ -1,0 +1,293 @@
+/* #typing-text::after {
+    content: '|';
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+} */
+@font-face {
+    font-family: "Wild Love";
+    src: url("/assets/wild-love-script.otf");
+  }
+
+
+
+:root {
+    --rosa: #B07C83;
+    --amarelo: #E1B87F;
+    --amarelo-hover: #e9c89a;
+    --branco: #ffffff;
+    --cinza-escuro: #75787B;
+    --cinza-claro: #DDDDDD;
+    --cinza-clarissimo: #f0f0f0;
+    --cinza-medio: #BCBBBB;
+
+    --font-futura: futura-pt, sans-serif;
+    --font-futura-bold: futura-pt-bold, sans-serif;
+    --font-wild: "Wild Love", sans-serif;
+    --font-size-base: 16px; /* Era 16px, aumentamos para 18px */
+    --line-height-base: 1.8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {    
+    font-family: var(--font-futura);
+    font-weight: 500;
+    font-style: normal;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    min-height: 100vh;
+    background-color: var(--branco);
+    margin: 0;
+    /* font-size: var(--font-size-base);
+    line-height: var(--line-height-base); */
+    -webkit-font-smoothing: antialiased; /* Deixa a fonte mais nítida */
+    overflow-x: hidden;
+}
+
+/* main {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+section {
+    padding-left: 5%;
+    padding-right: 5%;
+} */
+
+/* No styles.css */
+
+/* 1. Reset e Melhorias Globais */
+html {
+    scroll-behavior: smooth;
+    font-size: 16px; /* Base para o uso de REM */
+}
+
+/* 2. O Container Mágico */
+.container {
+    width: 100%;
+    max-width: 1280px; /* Largura máxima premium */
+    margin: 0 auto;
+    padding: 0 5%; /* Respiro lateral em telas pequenas */
+}
+
+/* 3. Ajuste no main para não limitar as cores de fundo */
+#main__content {
+    margin-top: 100px; /* Altura do seu nav */
+    width: 100%;
+}
+
+/* 4. Seção Genérica (Fundo Infinito) */
+section {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    /*padding: 60px 0;  Espaçamento vertical entre seções */
+}
+
+.cta__button{
+    font-family: var(--font-futura);
+    font-size: 14px;
+    padding: 13px 18px;
+    border: none;
+    background-color: var(--amarelo);
+    color: var(--branco);
+    border-radius: 8px;
+}
+
+.cta__button:hover {
+    background-color: var(--amarelo-hover);
+    color: var(--branco);
+}
+
+p {
+    font-size: 1.1rem; /* Aproximadamente 20px no desk */
+    /* color: var(--cinza-escuro); */
+}
+
+/* h1, h2, h3 {
+    /*letter-spacing: 1px;  Um pouco de espaço entre letras dá um ar moderno
+} */
+
+/* Ajuste nos parágrafos do banner para não ficarem minúsculos */
+#banner__p {
+    font-size: 1.2rem;
+}
+
+/* Estilização do Botão de WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366; /* Verde oficial do WhatsApp */
+    color: #FFF;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 35px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    
+    /* Acionando a animação: dura 5 segundos e repete infinitamente */
+    animation: jump-animation 5s infinite;
+}
+
+/* Efeito ao passar o mouse */
+.whatsapp-float:hover {
+    background-color: var(--amarelo); /* Tom mais escuro */
+    transform: scale(1.1);
+    color: #FFF;
+}
+
+/* Impede a seleção de texto em todo o site */
+body {
+    -webkit-user-select: none;  /* Chrome, Safari, Opera */
+    -moz-user-select: none;     /* Firefox */
+    -ms-user-select: none;      /* IE/Edge */
+    user-select: none;          /* Padrão */
+}
+
+/* Se você tiver campos de formulário, precisamos permitir a seleção neles 
+   para o cliente conseguir digitar o e-mail, senão o site quebra! */
+input, textarea {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+/* Container do Pop-up */
+.cookie-popup {
+    position: fixed;
+    bottom: 30px;
+    left: 30px; /* Estilo pop-up flutuante no canto */
+    max-width: 380px;
+    background: rgba(255, 255, 255, 0.75); /* Branco bem clarinho e transparente */
+    backdrop-filter: blur(12px); /* O efeito de vidro embaçado */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px; /* Cantos bem arredondados */
+    padding: 25px;
+    z-index: 9999;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); /* A sombra suave que você pediu */
+    display: none; /* Controlado pelo JS */
+    transition: all 0.5s ease;
+}
+
+.cookie-content h3 {
+    font-family: var(--fonte-titulos); /* Use sua variável de fonte premium */
+    font-size: 1.1rem;
+    color: var(--cinza-escuro);
+    margin-bottom: 10px;
+}
+
+.cookie-content p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Link da política sublinhado */
+.policy-link {
+    color: var(--rosa);
+    text-decoration: underline !important;
+    font-weight: 600;
+}
+
+/* Botão Rosa Premium */
+.cookie-btn-premium {
+    background-color: var(--rosa);
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%; /* Botão largo no pop-up fica bem moderno */
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.cookie-btn-premium:hover {
+    background-color: var(--amarelo); /* Inverte para o amarelo no hover */
+    transform: translateY(-2px);
+}
+
+/* Responsividade do Pop-up */
+@media (max-width: 480px) {
+    .cookie-popup {
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        max-width: none;
+    }
+}
+/* Esconde o banner no mobile se ficar muito grande, ou ajusta o layout */
+@media (max-width: 768px) {
+    .cookie-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .cookie-btn {
+        margin: 15px 0 0 0;
+    }
+}
+
+/* Definição da Animação de "Pulinho" */
+@keyframes jump-animation {
+    0%, 20%, 100% {
+        transform: translateY(0);
+    }
+    10% {
+        transform: translateY(-15px); /* O pulo */
+    }
+    15% {
+        transform: translateY(0);
+    }
+    17% {
+        transform: translateY(-5px); /* Um segundo pulinho menor */
+    }
+}
+
+/* Ajuste para telas pequenas (Mobile) */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+@media (min-width: 992px) {
+    .cta__button{
+        padding: 18px 45px;
+        font-size: 1.1rem;
+    }
+}
+

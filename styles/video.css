@@ -1,0 +1,97 @@
+/* --- ESTILOS BASE (Mobile First) --- */
+
+#video__text {
+    margin-top: -30px;
+    padding: 60px 20px 100px 20px;
+    background-color: var(--cinza-claro);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+}
+
+#video__text--container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#video__text--titulo {
+    color: var(--cinza-escuro);
+    font-size: 1rem; /* Aproximadamente 18px */
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+
+#video__text--destaque {
+    font-family: var(--font-wild);
+    color: var(--rosa);
+    font-size: 60px; /* Aumentado para dar destaque real */
+    line-height: 1;
+    display: block;
+    margin-top: -10px;
+}
+
+#video__text--corpo {
+    color: var(--cinza-escuro);
+    font-size: 1rem; /* Seguindo o padrão de 18px */
+    line-height: 1.6;
+    margin: 15px 10px;
+    max-width: 600px; /* Evita linhas muito longas que cansam a vista */
+    text-align: center;
+}
+
+#container__video--section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Container para manter a proporção do vídeo sempre correta (16:9) */
+#container__video--section iframe {
+    width: 90%;
+    max-width: 900px;
+    aspect-ratio: 16 / 9; /* Mantém o vídeo perfeito em qualquer tela */
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border: none;
+    margin-bottom: 30px;
+}
+
+/* --- VERSÃO DESKTOP --- */
+
+@media (min-width: 992px) {
+    #video__text {
+        padding: 100px 10%;
+    }
+
+    #video__text--titulo {
+        font-size: 1.4rem; /* 22px aprox */
+    }
+
+    #video__text--destaque {
+        font-size: 100px; /* Gigante e elegante no desk */
+        margin-top: -15px;
+    }
+
+    #video__text--corpo {
+        font-size: 1.25rem; /* 20px aprox */
+        margin: 40px auto;
+        max-width: 750px;
+    }
+
+    #container__video--section iframe {
+        width: 100%; /* No desk ele respeita o max-width de 900px */
+        margin-bottom: 40px;
+    }
+
+    #container__video--section .cta__button {
+        padding: 18px 45px;
+        font-size: 1.1rem;
+    }
+}

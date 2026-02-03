@@ -1,0 +1,252 @@
+/* linkme.css - Versão Profissional Refatorada */
+
+/* 1. Definições de Fontes e Variáveis */
+@font-face {
+    font-family: "Wild Love";
+    src: url("/assets/wild-love-script.otf");
+}
+
+:root {
+    /* Suas cores originais */
+    --rosa: #B07C83;
+    --amarelo: #E1B87F;
+    --branco: #ffffff;
+    --cinza-escuro: #75787B;
+    --cinza-claro: #DDDDDD;
+    --cinza-medio: #BCBBBB;
+
+    /* Tipografia */
+    --font-futura: futura-pt, sans-serif;
+    --font-wild: "Wild Love", sans-serif;
+
+    /* Configuração da Sombra 3D que você criou */
+    --shadow-offset: 0.3rem;
+    --transition-speed: 0.3s;
+}
+
+/* 2. Reset e Configurações Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-futura);
+    background-color: var(--cinza-claro);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    overflow-x: hidden; /* Garante que as formas laterais não criem barra de rolagem */
+    position: relative;
+}
+
+/* 3. Elementos Decorativos (Formas) */
+#forma1, #forma2 {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#forma1 {
+    background-color: var(--cinza-medio);
+    width: 8rem;
+    height: 3.5rem;
+    left: -1.5rem;
+    top: 2rem;
+    border-radius: 3rem;
+    opacity: 0.6;
+}
+
+#forma2 {
+    background-color: var(--amarelo);
+    width: clamp(12rem, 40vw, 18rem); /* Largura fluida */
+    height: 3.5rem;
+    right: -1.5rem;
+    bottom: 2rem;
+    border-radius: 3rem;
+    opacity: 0.6;
+}
+
+/* 4. Header */
+header {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 2rem;
+}
+
+#logo {
+    width: clamp(6rem, 15vw, 8rem);
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+header h1 {
+    color: var(--cinza-escuro);
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    color: var(--cinza-escuro);
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    line-height: 1.4;
+    max-width: 400px;
+}
+
+/* 5. Lista de Links */
+main {
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    z-index: 1;
+}
+
+#lista__links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+/* Estilo Base dos Botões (li) */
+.link {
+    border-radius: 1rem;
+    transition: all var(--transition-speed) ease;
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--branco);
+    cursor: pointer;
+}
+
+/* Estilo do Link (a) para ocupar todo o botão */
+.link a {
+    display: block; /* Ocupa todo o espaço da li */
+    padding: 1.2rem 1.5rem;
+    color: var(--branco);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    transition: color var(--transition-speed) ease;
+}
+
+/* Variações de Cores que você definiu */
+.link.v1 { background-color: var(--rosa); }
+.link.v2 { background-color: var(--amarelo); }
+.link.v3 { background-color: var(--cinza-medio); }
+
+/* Efeito Hover (Mantendo sua premissa de inverter as cores) */
+.link.v1:hover {
+    background-color: var(--branco);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--rosa);
+}
+.link.v1:hover a { color: var(--rosa); }
+
+.link.v2:hover {
+    background-color: var(--branco);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--amarelo);
+}
+.link.v2:hover a { color: var(--amarelo); }
+
+.link.v3:hover {
+    background-color: var(--branco);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--cinza-medio);
+}
+.link.v3:hover a { color: var(--cinza-medio); }
+
+/* 6. Footer */
+footer {
+    position: relative;
+    z-index: 1;
+    margin-top: 2.5rem;
+    color: var(--cinza-escuro);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    padding: 0 1.5rem;
+}
+
+/* 7. Cookie Popup (Mantendo sua estética transparente) */
+.cookie-popup {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    max-width: 380px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    padding: 25px;
+    z-index: 9999;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    display: none;
+    transition: all 0.5s ease;
+}
+
+.cookie-content h3 {
+    font-size: 1.1rem;
+    color: var(--cinza-escuro);
+    margin-bottom: 10px;
+    font-family: var(--font-futura);
+}
+
+.cookie-content p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.policy-link {
+    color: var(--rosa);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.cookie-btn-premium {
+    background-color: var(--rosa);
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.cookie-btn-premium:hover {
+    background-color: var(--amarelo);
+    transform: translateY(-2px);
+}
+
+/* 8. Ajustes de Responsividade */
+@media (max-width: 480px) {
+    .cookie-popup {
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        max-width: none;
+    }
+}
+
+@media (min-width: 992px) {
+    body {
+        padding: 5rem 2rem;
+    }
+    
+    /* No desktop, os botões podem ser um pouco mais largos e o texto maior */
+    .link a {
+        padding: 1.3rem 2rem;
+        font-size: 1.1rem;
+    }
+}

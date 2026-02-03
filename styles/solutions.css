@@ -1,0 +1,242 @@
+#container__soluction {
+    background-color: var(--branco);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    margin-top: 30px;
+    text-align: center;
+    padding-bottom: 70px;
+}
+
+.container__banner--img--soluction {
+    width: 100%;
+}
+
+#container__soluction__principal{
+    padding-top: 15px;
+}
+
+#soluction__principal--title{
+    color: var(--rosa);
+    font-weight: 700;
+    font-size: 30px;
+    margin: 25px 45px 5px 45px;
+}
+
+#soluction__principal--subtitle {
+    color: var(--amarelo);
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+#container__soluction__descricao {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: left;
+}
+
+#soluction__principal--text {
+    color: var(--cinza-escuro);
+    font-size: 16px;
+    margin: 13px 45px 35px 45px;
+    text-align: center;
+    font-size: 16px; 
+    max-width: 900px;
+    /* margin: 10px 0 30px 0; */
+}
+
+.soluction__descricao--text {
+    display: block;
+    background-color: var(--cinza-clarissimo);
+    border-radius: 25px;
+    margin-bottom: 30px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.soluction__descricao--text:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+/* Ajuste específico para o caminhão */
+.soluction__descricao--text:last-child .descricao--text--img {
+    width: 80px;
+}
+
+.soluction__descricao--text:last-child .descricao--text--img img {
+    height: 125px;
+    width: 125px;
+    bottom: -15px;
+    left: 30px;
+}
+
+.accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 15px 25px;
+    cursor: pointer;
+    min-height: 90px;
+    position: relative;
+}
+
+/* --- A SETA "ROUBADA" DO SWIPER --- */
+.accordion-icon {
+    background-color: var(--branco); 
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    flex-shrink: 0;
+    position: relative;
+}
+
+/* Escondemos a imagem antiga que estava dentro do span */
+.accordion-icon img {
+    display: none; 
+}
+
+/* Criamos a seta usando a fonte do Swiper */
+.accordion-icon::after {
+    font-family: swiper-icons; /* Aqui está o segredo! */
+    content: 'next';         /* Este é o código da setinha do Swiper */
+    font-size: 15px;
+    color: var(--rosa);
+    font-weight: bold;
+    transform: rotate(90deg); /* Aponta para baixo */
+    transition: all 0.4s ease;
+}
+
+/* --- ESTADO ATIVO (QUANDO O ACORDEÃO ABRE) --- */
+.accordion-item.active .accordion-icon {
+    background-color: var(--rosa); /* O círculo fica rosa */
+}
+
+.accordion-item.active .accordion-icon::after {
+    color: var(--branco);      /* A setinha vira branca */
+    transform: rotate(-90deg); /* A setinha vira para cima */
+}
+
+.descricao--text--img {
+    width: 80px;
+    height: 60px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.descricao--text--img img {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    object-fit: contain;
+    bottom: -10px;
+    left: 50%;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));
+    z-index: 5;
+    transform: translateX(-50%);
+}
+
+.accordion-header h3 {
+    flex: 1;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--cinza-escuro);
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+.accordion-content {
+    max-height: 0;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.5s ease;
+    padding: 0 25px;
+    overflow: hidden;
+}
+
+.accordion-content h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--cinza-escuro);
+}
+
+.accordion-content p {
+    font-size: 1rem;
+    margin: 15px 0 0 0;
+    line-height: 1.6;
+    color: var(--cinza-escuro);
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 500px;
+    padding: 0 25px 30px 25px;
+}
+
+/* DESKTOP */
+@media (min-width: 992px) {
+    #soluction__principal--text {
+        color: var(--cinza-escuro);
+        font-size: 1.25rem;
+        margin: 13px auto 35px auto;
+        text-align: center;
+        max-width: 900px;
+        /* margin: 10px 0 30px 0; */
+    }
+
+    #container__soluction__descricao {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center; /* Alinha pelo topo */
+        justify-content: center;
+        gap: 30px;
+        width: 100%;
+        max-width: 1200px; /* Não deixa as colunas espalharem demais */
+    }
+
+    .soluction__descricao--text {
+        width: calc(50% - 20px); /* Duas colunas */
+        margin-bottom: 0; /* O gap já resolve o espaço */
+    }
+    
+    .accordion-header {
+        display: flex; /* Volta a ser flex para o ícone aparecer */
+        text-align: left;
+        padding: 20px 30px;
+        cursor: pointer; /* Indica que é clicável */
+    }
+
+    .accordion-icon {
+        display: flex; /* Faz a setinha aparecer no desk também */
+    }
+
+    .accordion-content {
+        max-height: 0; /* Volta a ser fechado por padrão */
+        padding: 0 30px;
+        transition: all 0.5s ease;
+    }
+
+    /* Quando estiver ativo no desk */
+    .accordion-item.active .accordion-content {
+        max-height: 400px; 
+        padding: 10px 30px 40px 30px;
+    }
+
+    .accordion-header h3 {
+        font-size: 1.3rem; /* Título maior no desk */
+    }
+}

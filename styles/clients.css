@@ -1,0 +1,49 @@
+#container__clientes {
+    background-color: var(--rosa);
+    padding: 60px 0 100px 0;
+    overflow: hidden; /* Garante que o carrossel não escape */
+}
+
+#container__clientes--titulo {
+    background-color: var(--amarelo);
+    color: var(--branco);
+    padding: 6px 15px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto 40px;
+    border-radius: 4px;
+}
+
+.swiper-clients {
+    width: 100%;
+    /* Ajuste para o efeito de "esteira" contínua */
+    transition-timing-function: linear !important;
+}
+
+.swiper-clients .swiper-slide {
+    width: auto !important; /* Deixa o slide do tamanho da imagem */
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+}
+
+/* Padronização dos logos */
+.swiper-clients .swiper-slide img {
+    height: 30px; /* Altura pequena = Sofisticação */
+    width: auto;
+    /* object-fit: contain; */
+    filter: brightness(0) invert(1); /* Todos os logos brancos */
+    opacity: 0.7;
+    /* transition: all 0.3s ease; */
+}
+
+.swiper-clients .swiper-slide img:hover {
+    opacity: 1;
+    filter: none; /* Volta a cor original no hover */
+}
+
+.swiper-clients .swiper-wrapper {
+    transition-timing-function: linear !important;
+}

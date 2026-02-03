@@ -1,0 +1,199 @@
+#container__feedback {
+    background-color: var(--rosa);
+    padding: 80px 0;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    overflow: hidden;
+}
+
+#feedback__text--container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+#feedback--title {
+    font-size: 16px;
+    color: var(--branco);
+    text-transform: uppercase;
+    /* letter-spacing: 1px; */
+}
+
+#container__feedback--destaque {
+    font-family: var(--font-wild);
+    font-size: 60px;
+    margin-top: -10px;
+    color: var(--branco);
+}
+
+.swiper-feedback {
+    width: 100%;
+    padding: 20px 50px 80px 50px;
+}
+
+/* O CARD */
+.swiper-feedback .swiper-slide {
+    background-color: var(--branco) !important;
+    padding: 40px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza tudo horizontalmente */
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.6s ease-in-out;
+    height: auto;
+    opacity: 0.5;
+    transform: scale(0.9);
+}
+
+.swiper-feedback .swiper-slide-active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* TÍTULO E ESTRELAS */
+.swiper-feedback h3 {
+    color: var(--rosa) !important;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.card__stars {
+    display: flex;
+    justify-content: center; /* CENTRALIZA AS ESTRELAS */
+    gap: 5px;
+    color: var(--amarelo);
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+/* TEXTO DO FEEDBACK */
+.swiper-feedback p.testimonial-quote {
+    color: #555555 !important;
+    font-size: 1rem;
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 30px;
+    flex-grow: 1;
+}
+
+/* SEÇÃO DO AUTOR */
+.card__user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+/* LOGO DO CLIENTE (QUADRADO/RETANGULAR) */
+.card__user img {
+    width: 60px; /* Ajuste o tamanho conforme desejar */
+    height: 40px;
+    object-fit: contain; /* Garante que o logo não estique e apareça inteiro */
+    border-radius: 0; /* Remove o redondo */
+}
+
+.author-info {
+    text-align: left;
+}
+
+.author-info h4 {
+    color: var(--cinza-escuro);
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.author-info span {
+    color: #888888;
+    font-size: 0.8rem;
+    display: block;
+}
+
+/* --- PAGINAÇÃO E BOTÕES (ESTILO PREMIUM IGUAL AO BANNER) --- */
+
+/* Container da Seta (O círculo branco) */
+.swiper-feedback .swiper-button-next,
+.swiper-feedback .swiper-button-prev {
+    background-color: var(--branco); /* Círculo branco */
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15); /* Sombra para destacar no rosa */
+    transition: all 0.3s ease;
+    top: 55%; /* Ajuste fino para alinhar com o centro dos cards */
+}
+
+/* O ícone da seta dentro do círculo */
+.swiper-feedback .swiper-button-next:after,
+.swiper-feedback .swiper-button-prev:after {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--amarelo); /* Seta rosa para combinar com o fundo da seção */
+}
+
+/* Efeito ao passar o mouse */
+.swiper-feedback .swiper-button-next:hover,
+.swiper-feedback .swiper-button-prev:hover {
+    transform: scale(1.1);
+    background-color: #f8f8f8; /* Muda levemente o branco no hover */
+}
+
+/* Posicionamento nas laterais para não encostar nos cards */
+.swiper-feedback .swiper-button-prev {
+    left: 30px;
+}
+
+.swiper-feedback .swiper-button-next {
+    right: 30px;
+}
+
+/* Paginação (As bolinhas lá embaixo) */
+.swiper-feedback .swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.4); /* Bolinhas inativas mais transparentes */
+}
+
+.swiper-feedback .swiper-pagination-bullet-active {
+    background: var(--branco) !important;
+    width: 25px; /* Efeito de pílula na ativa */
+    border-radius: 10px;
+    opacity: 1;
+}
+
+@media (max-width: 991px) {
+    .swiper-feedback .swiper-button-next,
+    .swiper-feedback .swiper-button-prev {
+        display: flex; /* Garante que elas apareçam */
+        width: 35px;   /* Um pouco menores para não ocupar tanto espaço */
+        height: 35px;
+    }
+
+    /* Posiciona as setas bem na bordinha para sobrar espaço para o card */
+    .swiper-feedback .swiper-button-prev {
+        left: 10px;
+    }
+
+    .swiper-feedback .swiper-button-next {
+        right: 10px;
+    }
+
+    /* Diminuímos o tamanho da seta interna no mobile */
+    .swiper-feedback .swiper-button-next:after,
+    .swiper-feedback .swiper-button-prev:after {
+        font-size: 14px;
+    }
+}
+
+/* .swiper-pagination-bullet-active {
+    background: var(--branco) !important;
+    width: 20px;
+    border-radius: 10px;
+} */
