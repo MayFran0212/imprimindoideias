@@ -3,13 +3,13 @@
   "short_name": "Imprimindo Ideias",
   "icons": [
     {
-      "src": "/https://www.imprimindoideias.com/assets/web-app-manifest-192x192.png",
+      "src": "assets/web-app-manifest-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/https://www.imprimindoideias.com/assets/web-app-manifest-512x512.png",
+      "src": "assets/web-app-manifest-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
