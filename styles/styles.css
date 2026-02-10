@@ -40,6 +40,35 @@
     --line-height-base: 1.8;
 }
 
+/* --- CUSTOM SCROLLBAR (A BARRA FOFA!) --- */
+
+/* Para Chrome, Edge e Safari (Webkit) */
+::-webkit-scrollbar {
+    width: 12px;               /* Largura da barra */
+}
+
+::-webkit-scrollbar-track {
+    background: #f5f5f5;       /* Cor do "trilho" (fundo da barra) */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--amarelo); /* A cor que você queria! */
+    border-radius: 10px;              /* Deixa as pontas arredondadas */
+    border: 3px solid #f5f5f5;       /* Cria um respiro em volta da barra */
+    transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--amarelo-hover); /* Muda de cor ao passar o mouse */
+}
+
+/* Para Firefox (O Firefox usa uma sintaxe diferente e mais simples) */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--amarelo) #f5f5f5;
+}
+
 * {
   margin: 0;
   padding: 0;

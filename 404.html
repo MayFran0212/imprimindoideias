@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página não encontrada | Imprimindo Ideias</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://use.typekit.net/qvk4glu.css">
+    <style>
+        .error-container {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url('assets/banner-padrao.jpg') no-repeat center center/cover;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .error-glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            padding: 50px;
+            max-width: 600px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .error-glass h1 {
+            font-family: var(--font-wild); /* Aquela fonte manuscrita linda */
+            font-size: 5rem;
+            color: var(--rosa);
+            margin-bottom: 10px;
+        }
+
+        .error-glass h2 {
+            font-family: var(--font-futura-bold);
+            text-transform: uppercase;
+            color: var(--amarelo);
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .error-glass p {
+            color: var(--cinza-escuro);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .btns-row {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline {
+            padding: 13px 25px;
+            border: 2px solid var(--amarelo);
+            color: var(--amarelo);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: var(--amarelo);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-glass">
+            <h1>Ops...</h1>
+            <h2>Essa ideia ainda está no rascunho.</h2>
+            <p>Parece que o caminho que você tentou seguir não existe mais ou foi movido. 
+               Não se preocupe, vamos te ajudar a encontrar o presente perfeito!</p>
+            
+            <div class="btns-row">
+                <a href="index.html" class="cta__button" style="text-decoration: none;">Voltar para Home</a>
+                <a href="https://wa.me/5511963963000" class="btn-outline">Falar no WhatsApp</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
