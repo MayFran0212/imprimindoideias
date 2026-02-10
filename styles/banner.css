@@ -147,6 +147,37 @@
     background: var(--rosa) !important;
 }
 
+/* Torna o slide a referência de posição */
+.swiper-slide {
+    position: relative;
+    overflow: hidden;
+}
+
+/* O link invisível que cobre o banner */
+.banner__main-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10; /* Fica por cima do texto e da imagem */
+    display: block;
+}
+
+/* Ajuste no botão para ele continuar parecendo um botão mesmo sendo um <span> */
+.banner__cta {
+    display: inline-block;
+    cursor: pointer;
+    pointer-events: none; /* Deixa o clique "passar" para o link de baixo */
+}
+
+/* Para manter o efeito de hover no botão quando passar o mouse no banner */
+.swiper-slide:hover .banner__cta {
+    background-color: var(--amarelo-hover); /* Ou a sua cor de hover */
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
 /* 6. Media Queries (Ajustes Finais) */
 
 /* Telas Ultrawide (Acima de 1800px), vou alterar para 995 */
